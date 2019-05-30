@@ -7,4 +7,16 @@ before_install:
 
 script:
   - docker run phizercost/docker-react npm run test -- --coverage #-- --coverage allows the other scripts after to continue run
-  
+
+deploy:
+  provider: elasticbeanstalk
+  region: "eu-west-3"
+  app: "docker"
+  env: "Docker-env"
+  bucket_name: "elasticbeanstalk-eu-west-3-110134318810"
+  bucket_path: "docker"
+  on:
+    branch: master
+    access_key_id: $AWS_ACCESS_KEY
+    secret_access_key:
+      secure: "$AWS_SECRET_KEY"
