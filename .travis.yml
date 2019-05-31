@@ -6,8 +6,8 @@ before_install:
   - docker build -t phizercost/docker-react -f Dockerfile.dev .
 
 script:
-  - docker run phizercost/docker-react npm run test -- --coverage #-- --coverage allows the other scripts after to continue run
-
+  - docker run -e CI=true phizercost/docker-react npm run test -- --watchAll=false
+  
 deploy:
   provider: elasticbeanstalk
   region: "eu-west-3"
