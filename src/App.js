@@ -21,7 +21,7 @@ class App extends Component {
           </a>
         </header>
         <p>
-        I am happy this works well now
+        Inter Milan has appointed a new coach
         </p>
       </div>
     );
