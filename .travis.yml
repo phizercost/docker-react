@@ -7,7 +7,6 @@ before_install:
 
 script:
   - docker run -e CI=true phizercost/docker-react npm run test -- --watchAll=false
-  
 deploy:
   provider: elasticbeanstalk
   region: "eu-west-3"
